@@ -1,5 +1,11 @@
 .container {
-  padding: 0 2rem;
+  padding: 2rem 2rem;
+  background: #0000004d;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 0 #00000045;
+  margin: 0rem auto;
+  text-align: center;
+  width: 60%;
 }
 
 .main {
@@ -107,7 +113,27 @@
   height: 1em;
   margin-left: 0.5rem;
 }
-
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  /* max-height: 400px; */
+  overflow-y: auto;
+  padding: 10px 50px;
+  /* margin: 20px 0px; */
+}
+.datetime {
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: red;
+  text-shadow: 2px 2px wheat;
+  width: 30%;
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;

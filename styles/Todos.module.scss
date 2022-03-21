@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 1rem 2rem;
+  color: #fec84b;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #607d8b;
+  border-radius: 10px;
+  padding: 4px 20px 5px 30px;
+  text-align: left;
+  .right {
+    display: flex;
+    width: 30%;
+    justify-content: flex-end;
+    span {
+      margin: 0px 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      height: 40px;
+      padding: 0;
+      transition: 0.7s;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #222;
+      cursor: pointer;
+      &:hover {
+        background-color: #222;
+        border-radius: 10px;
+        color: #607d8b;
+        opacity: 0.85;
+      }
+    }
+    input{
+      height: 24px;
+      width: 24px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.addTodos {
+  padding: 0 50px;
+  .wrapper {
+    color: #fec84b;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #607d8b;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    text-align: left;
+    span{
+      cursor: pointer;
+    }
+    input {
+      width: 70%;
+      height: 30px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+    }
+  }
+}
