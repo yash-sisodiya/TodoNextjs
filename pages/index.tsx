@@ -5,6 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { FunctionComponent, useEffect, useState } from "react";
 import AddTodo from "../components/addTask";
+import Filter from "../components/filter";
 import Todo from "../components/task";
 import { Images } from "../constants/images";
 import Layout from "../layouts/Layout";
@@ -68,8 +69,9 @@ const Home: FunctionComponent<Props> = ({ todos }) => {
         `,
         variables: { deleteTaskId },
       });
-      todos = [...TodoData.filter((task) => task.id !== deleteTaskId)];
-      setTodoData(todos);
+      refetch();
+      // todos = [...TodoData.filter((task) => task.id !== deleteTaskId)];
+      // setTodoData(todos);
       console.log("successfully deleted note!", todos);
     } catch (err) {
       console.log({ err });
@@ -144,6 +146,32 @@ const Home: FunctionComponent<Props> = ({ todos }) => {
     }
   };
 
+  const filterTodo = async (type: string) => {
+    switch (type) {
+      case "All":
+        setTodoData(data?.getAllTask);
+        break;
+      case "Completed":
+        let temp = [
+          ...data?.getAllTask.filter(
+            (task: TodoProps) => task.status !== false
+          ),
+        ];
+        setTodoData(temp);
+        break;
+      case "Uncompleted":
+        let temp1 = [
+          ...data?.getAllTask.filter(
+            (task: TodoProps) => task.status === false
+          ),
+        ];
+        setTodoData(temp1);
+        break;
+      default:
+        break;
+    }
+  };
+
   const updateTodo = async (data: TodoProps) => {
     setEditMode(true);
     setTodoName(data.name);
@@ -164,6 +192,7 @@ const Home: FunctionComponent<Props> = ({ todos }) => {
           setTodoName={(e) => setTodoName(e)}
           EditMode={EditMode}
         />
+        <Filter filterTodo={(type) => filterTodo(type)} />
         {TodoData && TodoData.length > 0 ? (
           <div className={styles.wrapper}>
             {TodoData?.map((todo: TodoProps) => (
@@ -177,7 +206,7 @@ const Home: FunctionComponent<Props> = ({ todos }) => {
             ))}
           </div>
         ) : (
-          "No Data Availabel"
+          <div className={styles.nodata}>No Data Availabel</div>
         )}
       </div>
     </Layout>

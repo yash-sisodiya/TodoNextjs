@@ -31,7 +31,7 @@ const Todo: FunctionComponent<Props> = ({
             onClick={() => markTodo(todo.id, !todo.status)}
           />
         </span>
-        <span onClick={()=>updateTodo(todo)}>&#9998;</span>
+        <span style={{transform: 'rotateZ(90deg)'}} onClick={()=>updateTodo(todo)}>&#9998;</span>
         <span onClick={() => deleteTodo(todo.id)}>&#10005;</span>
       </div>
     </div>

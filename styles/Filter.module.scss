@@ -1,0 +1,29 @@
+.filter {
+  padding: 10px 50px;
+  width: 75%;
+  margin: 0 auto;
+  .wrapper {
+    color: #fec84b;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #607d8b;
+    border-radius: 10px;
+    text-align: left;
+    .type{
+      padding: 1rem 2rem;
+      min-width: 25%;
+      text-align: center;
+      &:hover{
+        background-color: #222;
+        border-radius: 10px;
+        color: #607d8b;
+        opacity: 0.85;
+      }
+    }
+  }
+}

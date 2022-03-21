@@ -123,6 +123,10 @@
   padding: 10px 50px;
   /* margin: 20px 0px; */
 }
+.nodata{
+  color: #fec84b;
+  font-size: 1rem;
+}
 .datetime {
   font-size: 36px;
   display: flex;

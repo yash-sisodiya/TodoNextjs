@@ -4,7 +4,7 @@ import Layoutstyles from "../styles/Layout.module.scss";
 function Layout({ children }: any) {
   return (
     <div className={Layoutstyles.wrapper}>
-      <Header />
+      {/* <Header /> */}
       <div className={Layoutstyles.child}>{children}</div>
     </div>
   );
